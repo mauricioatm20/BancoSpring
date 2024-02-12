@@ -5,25 +5,29 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import org.springframework.stereotype.Repository;
+
+@Repository
 public class BancoDao implements BancoDaoInterface {
 	private DataSource dataSource;
 
 	public BancoDao() {
-		this.dataSource = MyDataSource.getDataSource();
+//		this.dataSource = MyDataSource.getDataSource();
+//		esta dependencia la inyectamos a traves de Spring
 	}
 
-	public void cambiarSaldo(long dni, double incrementoSaldo) {
+	public void cambiarSaldo(long id, double incrementoSaldo) {
 		String sql = "update clientes set saldo = saldo + " + incrementoSaldo
-				+ " where dni = " + dni;
+				+ " where id = " + id;
 		Connection con = null;
 		try {
 			con = dataSource.getConnection();
 			int n = con.createStatement().executeUpdate(sql);
 			if (n == 1) {
-				System.out.println("Se ha incrementado el saldo de " + dni
+				System.out.println("Se ha incrementado el saldo de " + id
 						+ " en " + incrementoSaldo + " euros");
 			} else {
-				System.out.println("No existe el cliente con el " + dni);
+				System.out.println("No existe el cliente con el " + id);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();

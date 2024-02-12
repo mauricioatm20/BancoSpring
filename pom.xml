@@ -5,11 +5,11 @@
   <modelVersion>4.0.0</modelVersion>
 
   <groupId>es.cursogetafe</groupId>
-  <artifactId>A22_BancoSpring</artifactId>
+  <artifactId>A23_BancoSpring</artifactId>
   <version>0.0.1-SNAPSHOT</version>
 
-  <name>A22_BancoSpring</name>
-  <description>A simple A22_BancoSpring.</description>
+  <name>A23_BancoSpring</name>
+  <description>A simple A23_BancoSpring.</description>
   <!-- FIXME change it to the project's website -->
   <url>http://www.example.com</url>
 
@@ -20,6 +20,7 @@
   </properties>
 
   <dependencies>
+	  
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
@@ -30,6 +31,29 @@
     	<artifactId>A18_AgendaV2</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
+    
+    	    <!-- https://mvnrepository.com/artifact/org.springframework/spring-context -->
+	<dependency>
+	    <groupId>org.springframework</groupId>
+	    <artifactId>spring-context</artifactId>
+	    <version>5.3.31</version>
+	</dependency>
+	
+	    <!-- https://mvnrepository.com/artifact/commons-dbcp/commons-dbcp -->
+	<dependency>
+    	<groupId>commons-dbcp</groupId>
+    	<artifactId>commons-dbcp</artifactId>
+    	<version>1.4</version>
+	</dependency>
+	
+	<!-- https://mvnrepository.com/artifact/com.mysql/mysql-connector-j -->
+	<dependency>
+    	<groupId>com.mysql</groupId>
+    	<artifactId>mysql-connector-j</artifactId>
+    	<version>8.3.0</version>
+	</dependency>
+	
+    
   </dependencies>
 
   <build>

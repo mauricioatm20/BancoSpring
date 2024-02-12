@@ -1,15 +1,20 @@
 package es.cursogetafe.banco.negocio;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import es.cursogetafe.banco.persistencia.BancoDao;
 import es.cursogetafe.banco.persistencia.BancoDaoInterface;
 
+@Service
 public class BancoNegocio implements BancoNegocioInterface {
 	private BancoDaoInterface bancoDao;
-
+	
+@Autowired
 	public BancoNegocio() {
-		bancoDao = new BancoDao();
 	}
 
+//	este metodo debe ser transaccional
 	public void transferencia(long dni1, long dni2, double cantidad) {
 		System.out.println("Inicio de la transferencia");
 		bancoDao.cambiarSaldo(dni1, cantidad);

@@ -2,19 +2,23 @@ package es.cursogetafe.banco.presentacion;
 
 import java.util.Scanner;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+import org.springframework.stereotype.Repository;
+
 import es.cursogetafe.banco.negocio.BancoNegocio;
 import es.cursogetafe.banco.negocio.BancoNegocioInterface;
 
+@Component
 public class BancoVista implements BancoVistaInterface{
 	
+	@Autowired
 	private BancoNegocioInterface bancoNegocio;
 	
 	public BancoVista(){
-		bancoNegocio  = new BancoNegocio();
 	}
 
-	public void iniciarAplicacion() 
-	{
+	public void iniciarAplicacion() {
 		Scanner teclado = new Scanner(System.in);
 
 		System.out.println("TRANSFERENCIA");
