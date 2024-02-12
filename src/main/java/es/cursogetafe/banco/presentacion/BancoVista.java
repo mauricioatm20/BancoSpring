@@ -2,6 +2,8 @@ package es.cursogetafe.banco.presentacion;
 
 import java.util.Scanner;
 
+import javax.annotation.PostConstruct;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Repository;
@@ -17,7 +19,8 @@ public class BancoVista implements BancoVistaInterface{
 	
 	public BancoVista(){
 	}
-
+	
+@PostConstruct
 	public void iniciarAplicacion() {
 		Scanner teclado = new Scanner(System.in);
 

@@ -1,4 +1,4 @@
-package es.cursogetafe.springxml.config;
+package es.cursogetafe.banco.config;
 
 import javax.sql.DataSource;
 
