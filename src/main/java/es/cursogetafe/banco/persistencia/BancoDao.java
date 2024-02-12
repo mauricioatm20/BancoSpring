@@ -5,10 +5,13 @@ import java.sql.SQLException;
 
 import javax.sql.DataSource;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 @Repository
 public class BancoDao implements BancoDaoInterface {
+	
+	@Autowired
 	private DataSource dataSource;
 
 	public BancoDao() {

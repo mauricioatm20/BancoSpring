@@ -8,9 +8,10 @@ import es.cursogetafe.banco.persistencia.BancoDaoInterface;
 
 @Service
 public class BancoNegocio implements BancoNegocioInterface {
+
+	@Autowired
 	private BancoDaoInterface bancoDao;
 	
-@Autowired
 	public BancoNegocio() {
 	}
 

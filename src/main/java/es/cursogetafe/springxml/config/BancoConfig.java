@@ -14,7 +14,8 @@ import org.springframework.core.env.Environment;
 @PropertySource("classpath:bbdd.properties")
 @ComponentScan(basePackages = {
 		"es.cursogetafe.banco.persistencia",
-		"es.cursogetafe.banco.negocio"
+		"es.cursogetafe.banco.negocio",
+		"es.cursogetafe.banco.presentacion"
 		})
 public class BancoConfig {
 
@@ -24,9 +25,9 @@ public class BancoConfig {
 	@Bean
 	public DataSource dataSource() {
 		BasicDataSource dbs = new BasicDataSource();
-		dbs.setDriverClassName(prop.getProperty("bbd.driver"));
-		dbs.setUrl(prop.getProperty("bbd.url"));
-		dbs.setUsername(prop.getProperty("bbd.user"));
+		dbs.setDriverClassName(prop.getProperty("bbdd.driver"));
+		dbs.setUrl(prop.getProperty("bbdd.url"));
+		dbs.setUsername(prop.getProperty("bbdd.user"));
 		dbs.setPassword(prop.getProperty("bbdd.pass"));
 		
 		return dbs;
